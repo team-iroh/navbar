@@ -4,22 +4,22 @@ services:
 
   # Backend API
   navbar:
-    container_name: api
+    container_name: navbar-api
     build: ./
     command: npm start
     working_dir: /Workspace/fec-capstone/navbar
     volumes:
       - ./:/Workspace/fec-capstone/navbar
     ports:
-      - "3000:3000"
+      - "3004:3004"
     environment:
       MYSQL_URI: mysql://root:password@mysql:3306/kstart
       REDIS_URI: redis://redis:6379
 
   # MySQL
   mysql:
-    container_name: mysql
-    build: ./mysql
+    image: mysql
+    container_name: navbar-mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: kstart
@@ -31,7 +31,7 @@ services:
   # Redis
   redis:
     image: redis
-    container_name: redis
+    container_name: navbar-redis
     ports:
       - "6379:6379"
 
