@@ -3,22 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/team-iroh/za-service#readme",
-  "bugs": {
-    "url": "https://github.com/team-iroh/za-service/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/team-iroh/navbar.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Zach Ayers",
   "main": "server/src/index.js",
   "scripts": {
+    "test": "(cd server && npm test); (cd client && npm test);",
     "dev": "cd server && npm run dev",
-    "start": "cd server && npm start",
+    "postinstall": "(cd client && npm install); (cd server && npm install);",
     "prestart": "cd client && npm run build-prod",
-    "postinstall": "(cd client && npm install); (cd server && npm install);"
+    "start": "cd server && npm start"
   },
   "dependencies": {},
   "devDependencies": {

@@ -11,11 +11,11 @@ services:
     env_file:
       - ./server/src/config/.env
     ports:
-      - "3004:3004"
+      - "3005:3005"
     environment:
       DATABASE_HOST: mysql
-      MYSQL_URI: mysql://root:password@mysql:3306/kstart
-      REDIS_URI: redis://redis:6379
+      MYSQL_URI: mysql://root:password@mysql:3307/kstart
+      REDIS_URI: redis://redis:6380
 
   # MySQL
   mysql:
@@ -27,12 +27,12 @@ services:
       MYSQL_USER: k-user
       MYSQL_PASSWORD: k-pass
     ports:
-      - "3306:3306"
+      - "3307:3307"
 
   # Redis
   redis:
     image: redis
     container_name: navbar-redis
     ports:
-      - "6379:6379"
+      - "6380:6380"
 
