@@ -31,7 +31,7 @@ jobs:
 
       # Make Report Directory
       - run: mkdir reports
-        -
+
       # Run Jest
       - run:
           name: Run Jest Suite on Client
