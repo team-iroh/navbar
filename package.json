@@ -1,8 +1,13 @@
 {
   "name": "service",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "keywords": [],
+  "homepage": "https://github.com/team-iroh/za-service#readme",
+  "bugs": {
+    "url": "https://github.com/team-iroh/za-service/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/team-iroh/navbar.git"
@@ -10,15 +15,31 @@
   "license": "ISC",
   "author": "Zach Ayers",
   "main": "server/src/index.js",
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
-    "test": "(cd server && npm test); (cd client && npm test);",
-    "dev": "cd server && npm run dev",
-    "postinstall": "(cd client && npm install); (cd server && npm install);",
-    "prestart": "cd client && npm run build-prod",
-    "start": "cd server && npm start"
+    "dev": "concurrently 'yarn dev:server' 'yarn dev:client'",
+    "dev:client": "cd client && yarn build-dev:watch",
+    "dev:server": "cd server && yarn dev",
+    "format": "(cd server && yarn format); (cd client && yarn format);",
+    "postinstall": "(cd client && yarn install); (cd server && yarn install);",
+    "lint": "(cd server && yarn lint); (cd client && yarn lint);",
+    "precommit-msg": "echo 'Project parsing...' && exit 0",
+    "sort": "(npx sort-package-json); (cd server && yarn sort); (cd client && yarn sort);",
+    "prestart": "cd client && yarn build-prod",
+    "start": "cd server && yarn start"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "sort",
+    "lint",
+    "format"
+  ],
   "dependencies": {},
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "gulp": "^4.0.2"
   }
 }

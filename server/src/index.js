@@ -1,41 +1,19 @@
-/* Import Modules */
+const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
-/* Set the Environmental Variables from the config file
- *  NOTE: for this server to function correctly, the config variables must be set
- * in the /config/.env file - this file does not exist if this project has been cloned from github.
- * Create a '.env' file in the 'config' folder and populate it with these variables
- * ----------------------
- * PORT:<port number>
- * DATABASE_NAME:<database name>
- * DATABASE_USER:<database username>
- * DATABASE_PASSWORD:<database password>
- * ----------------------
- * */
-require('dotenv').config({ path: path.resolve(__dirname, './config/.env') });
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-/* Import Debug module
- *  These modules are used in place of 'console.log' to keep the terminal from being
- *  filled with unnecessary items during production runs
- * */
-const serverDebug = require('debug')('server:startup');
+// Serve up the dist folder from the client at the defined PORT
+app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
-/* App must be imported after the Environment Variables have been loaded
-   or it will not have access to the variables*/
-const database = require('./database');
-const app = require('./app');
-
-/* If we are not running a test environment - make the sequelize database connection
- *  If a test suite is running - we will be making connections in the test suites
- * */
-if (process.env.NODE_ENV !== 'test') {
-  database.createSequelizeConnection();
-}
-
-// Start the server listening on the predefined PORT variable
-const server = app.listen(process.env.PORT, () => {
-  serverDebug(`Server running on port: ${process.env.PORT}`);
+/* This is to allow the app to send the dist html file no matter the params in the request */
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/dist', 'index.html'));
 });
 
-// Export the server module
-module.exports = server;
+app.listen(3006, () => {
+  console.log('Listening on 3006');
+});

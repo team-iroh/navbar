@@ -4,35 +4,11 @@ services:
 
   # Backend API
   navbar-service:
-    container_name: navbar-api
+    container_name: rewards-api
     build: ./
-    command: npm start
+    command: yarn start
     working_dir: /Workspace/fec-capstone/navbar
-    env_file:
-      - ./server/src/config/.env
     ports:
-      - "3005:3005"
-    environment:
-      DATABASE_HOST: mysql
-      MYSQL_URI: mysql://root:password@mysql:3307/kstart
-      REDIS_URI: redis://redis:6380
+      - "3006:3006"
 
-  # MySQL
-  mysql:
-    image: mysql
-    container_name: navbar-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: kstart
-      MYSQL_USER: k-user
-      MYSQL_PASSWORD: k-pass
-    ports:
-      - "3307:3307"
-
-  # Redis
-  redis:
-    image: redis
-    container_name: navbar-redis
-    ports:
-      - "6380:6380"
 
