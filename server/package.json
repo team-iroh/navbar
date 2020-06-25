@@ -7,7 +7,6 @@
     "dev": "nodemon src/index.js",
     "format": "npx prettier . --write",
     "lint": "npx eslint ./ --fix",
-    "precommit-msg": "echo 'Server parsing...' && exit 0",
     "sort": "npx sort-package-json",
     "start": "DEBUG=server:startup node src/index.js"
   },
