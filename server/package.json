@@ -1,72 +1,20 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "server for the navbar service",
-  "keywords": [],
-  "repository": {},
-  "license": "ISC",
-  "author": "",
-  "main": "src/index.js",
+  "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "format": "npx prettier . --write",
+    "lint": "npx eslint ./ --fix",
+    "precommit-msg": "echo 'Server parsing...' && exit 0",
+    "sort": "npx sort-package-json",
     "start": "node src/index.js"
   },
-  "prettier": {
-    "arrowParens": "always",
-    "bracketSpacing": true,
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true
-  },
-  "eslintConfig": {
-    "plugins": [
-      "prettier"
-    ],
-    "extends": [
-      "airbnb",
-      "prettier",
-      "plugin:node/recommended"
-    ],
-    "rules": {
-      "class-methods-use-this": "off",
-      "consistent-return": "off",
-      "func-names": "off",
-      "no-console": "warn",
-      "no-param-reassign": "off",
-      "no-process-exit": "off",
-      "no-return-await": "off",
-      "no-underscore-dangle": "off",
-      "no-unused-vars": [
-        "error",
-        {
-          "argsIgnorePattern": "req|res|next|val"
-        }
-      ],
-      "object-shorthand": "off",
-      "prefer-destructuring": [
-        "error",
-        {
-          "object": true,
-          "array": false
-        }
-      ],
-      "spaced-comment": "off",
-      "prettier/prettier": "error"
-    }
-  },
   "dependencies": {
-    "axios": "^0.19.2",
     "cors": "^2.8.5",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "dotenv-expand": "^5.1.0",
-    "eslint-plugin-react-hooks": "^2.5.1",
     "express": "^4.17.1",
-    "express-rate-limit": "^5.1.3",
-    "helmet": "^3.23.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.13",
-    "xss-clean": "^0.1.1"
+    "helmet": "^3.23.2"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.10.1",
@@ -74,13 +22,17 @@
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-chai-expect": "^2.1.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-mocha": "^7.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
-    "jest": "^26.0.1",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": "12.16.3"
   }
 }
