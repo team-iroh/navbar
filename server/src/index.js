@@ -2,6 +2,12 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+/* Import Debug module
+ *  These modules are used in place of 'console.log' to keep the terminal from being
+ *  filled with unnecessary items during production runs
+ * */
+const serverDebug = require('debug')('server:startup');
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -15,5 +21,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(3006, () => {
-  console.log('Listening on 3006');
+  serverDebug(`Server running on port: 3006`);
 });

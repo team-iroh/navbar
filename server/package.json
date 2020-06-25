@@ -9,10 +9,11 @@
     "lint": "npx eslint ./ --fix",
     "precommit-msg": "echo 'Server parsing...' && exit 0",
     "sort": "npx sort-package-json",
-    "start": "node src/index.js"
+    "start": "DEBUG=server:startup node src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "debug": "^4.1.1",
     "express": "^4.17.1",
     "helmet": "^3.23.2"
   },
