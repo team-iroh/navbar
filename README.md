@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> This is the client & server side code for the rewards/pledges microservice that mocks the rewards component of the Kickstarter site.
+> This is the client & server side code for the navbar microservice that mocks the navbar component of the Kickstarter site.
 
 ### 🏠 [Homepage](https://github.com/team-iroh/navbar#readme)
 
