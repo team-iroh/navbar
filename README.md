@@ -3,9 +3,6 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.14.5-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D12.16.3-blue.svg" />
-  <a href="https://team-iroh.github.io/pledge-rewards/index.html" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
   <a href="https://github.com/team-iroh/navbar/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
