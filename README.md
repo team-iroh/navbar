@@ -18,16 +18,6 @@
 
 ### 🏠 [Homepage](https://github.com/team-iroh/navbar#readme)
 
-## Server Documentation
-https://team-iroh.github.io/pledge-rewards/index.html
-
-## API Documentation
-### /api/projects
-https://documenter.getpostman.com/view/11644172/SzzkcH2w?version=latest
-
-### /api/rewards
-https://documenter.getpostman.com/view/11644172/SzzkcHBk?version=latest
-
 ## Prerequisites
 
 - npm >=6.14.5
