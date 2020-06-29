@@ -32,6 +32,12 @@
 npm install
 ```
 
+## Build
+
+```sh
+npm run build
+```
+
 ## Usage - Start
 
 ```sh
