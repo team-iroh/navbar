@@ -20,6 +20,12 @@
 - npm >=6.14.5
 - node >=12.16.3
 
+## Mounting Points in index.html
+- Navbar module mounts to the div with id of 'navbar'
+```html
+<div id="navbar"></div>
+```
+
 ## Install
 
 ```sh
