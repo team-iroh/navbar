@@ -6,9 +6,7 @@ services:
   navbar-service:
     container_name: rewards-api
     build: ./
-    command: |
-      yarn build
-      yarn start
+    command: yarn start
     working_dir: /app
     ports:
       - "3006:3006"
