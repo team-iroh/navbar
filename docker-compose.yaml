@@ -6,8 +6,10 @@ services:
   navbar-service:
     container_name: rewards-api
     build: ./
-    command: yarn start
-    working_dir: /Workspace/fec-capstone/navbar
+    command: |
+      yarn build
+      yarn start
+    working_dir: /app
     ports:
       - "3006:3006"
 

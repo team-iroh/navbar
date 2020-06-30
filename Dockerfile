@@ -2,7 +2,7 @@
 FROM node:12.16.3
 
 # Set the working directory
-WORKDIR /Workspace/fec-capstone/rewards
+WORKDIR /app
 
 # Copy root directory into docker root directory
 COPY . .
